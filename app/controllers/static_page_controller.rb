@@ -1,11 +1,18 @@
 class StaticPageController < ApplicationController
   def welcome
 
-    @author = Gossip.find(1).author
+    i = 1
     @params = params["id"]
+    @gossips_author = []
+    @gossips_content = []
     @gossips = Gossip.all
-    @author_gossip = Gossip.find(1).author
-    @content_gossip = Gossip.find(1).content
+    @gossips.count.times do 
+
+    @gossips_author << Gossip.find(i).author
+    @gossips_content << Gossip.find(i).content
+    
+    i += 1
+   end
 
 
   end
@@ -27,8 +34,12 @@ class StaticPageController < ApplicationController
 
   def index_post
 
-  	puts "l'index_post __________________________"
-  	puts params
+
+  end
+
+  def gossip
+
+    @params = params["id"]
 
   end
 

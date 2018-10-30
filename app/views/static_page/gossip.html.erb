@@ -1,0 +1,40 @@
+<header>	
+<nav class="navbar">
+ 
+    <span class="navbar-toggler-icon"></span>
+  
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/team">Team </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Page d'accueil</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+</header>
+
+<h1>Voici le Gossip demandé</h1>
+
+
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">écris par <%= Gossip.find(@params).author %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Créé le <%= Gossip.find(@params).created_at %></h6>
+    <p class="card-text">
+
+  <%= Gossip.find(@params).content %> 
+
+    </p>
+    <a href="#welcome" class="welcome">Retourner à la page d'accueil</a>
+   
+  </div>
+</div>
